@@ -1,2 +1,9 @@
-<?php
-echo "home page";
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+</head>
+<body>
+<h1>Home's page</h1>
+</body>
+</html>

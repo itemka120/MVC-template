@@ -1,5 +1,5 @@
 <?php
-require_once "app/Controllers/Routing/Router.php";
+error_reporting(E_ALL);
 
-$view = new Router();
-$view->getPage();
+require_once "core/View/View.php";//TODO
+return (new \core\View\View)->getPage();
