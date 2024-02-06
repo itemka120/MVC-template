@@ -1,7 +1,12 @@
 <?php
-//namespace app\Controller;TODO: doesn't work with View
+namespace app\Controllers;
+
 class PageController {
     public function about() {
         include('public/views/about.php');
+    }
+
+    public function index() {
+        include('public/views/home.php');
     }
 }

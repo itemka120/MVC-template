@@ -1,10 +1,10 @@
 <?php
-namespace app\Controller;
-class Errors
+namespace app\Controllers;
+
+class ErrorController
 {
     public function show404(): bool
     {
-        http_response_code(404);
-        exit();
+        return http_response_code(404);
     }
 }

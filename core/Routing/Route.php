@@ -2,9 +2,9 @@
 namespace core\Routing;
 
 class Route {
-    private $url;
-    private $controller;
-    private $action;
+    public $url;
+    public $controller;
+    public $action;
 
     public function __construct($url, $controller, $action) {
         $this->url = $url;

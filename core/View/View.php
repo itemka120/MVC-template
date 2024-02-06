@@ -1,42 +1,35 @@
 <?php
 namespace core\View;
-use app\Controller\Errors;
 
-require_once "core/Routing/Router.php";
-require_once "app/Controllers/HomeController.php";
-require_once "app/Controllers/PageController.php";
-require_once "app/Controllers/ErrorController.php";
+use app\Controllers\PageController;
+use app\Controllers\ErrorController;
 
 class View
 {
-    public function getPage() { //Calls Controllers
-        $url = "/" . $_GET['url'] ?? "/";
-        [$controllerName, $actionName] = $this->setPage($url);
-        if($this->setPage($url)) {
-            $controllerFile = "app/Controllers/$controllerName.php";
-            if (file_exists($controllerFile)) {
-                //$controller = new $controllerName;
-                //return $controller->$actionName();
-                return (new $controllerName())->$actionName();
 
-            }
+    public $routes;
+
+
+    public function getPage() { //Calls Controllers
+        //$url = $_GET['url'] ?? "/";
+        $url = isset($_GET['url']) ? '/' . ltrim($_GET['url'], '/') : '/';
+        $actionName = $this->setPage($url);
+        if($this->setPage($url)) {
+            return (new PageController())->$actionName();
         }else{
-            return (new Errors())->show404();
+            return (new ErrorController)->show404();
         }
 
     }
 
+
     public function setPage($url) { //Works with Urls
-        //$routes = (new Router)->getRoutes();TODO
-        if ($url == "/") {
-            $controllerName = "HomeController";
-            $actionName = "index";
-            return [$controllerName, $actionName];
-        }elseif ($url == "/about"){
-            $controllerName = "PageController";
-            $actionName = "about";
-            return [$controllerName, $actionName];
-        }else{
+        //$routes = (new Router())->getRoutes();TODO
+        if ($url === "/") {
+            return "index";
+        } elseif ($url === "/about") {
+            return "about";
+        } else{
             return false;
         }
     }

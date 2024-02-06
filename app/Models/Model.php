@@ -1,5 +1,5 @@
 <?php
-namespace app\Model;
+namespace app\Models;
 class Model
 {
     public function Data()

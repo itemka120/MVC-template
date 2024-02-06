@@ -1,5 +1,10 @@
 <?php
+//Loading Classes
+require_once 'vendor/autoload.php';
+
+//Debugging
 error_reporting(E_ALL);
 
-require_once "core/View/View.php";//TODO
-return (new \core\View\View)->getPage();
+//Getting Page
+use core\View\View;
+return (new View)->getPage();
