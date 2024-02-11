@@ -7,4 +7,5 @@ class ErrorController
     {
         return http_response_code(404);
     }
+
 }
