@@ -611,7 +611,7 @@ jQuery.extend(true, _R, {
 		v = v === undefined ? new Object() : v;
 		if (v.Core===undefined) {
 			v.Core = new Object();
-			v.Core.alias = "Slider Revolution Core";
+			v.Core.alias = "Slider Revolution core";
 			v.Core.name = "jquery.themepunch.revolution.min.js";
 			v.Core.ver = _R.getversion().core;
 		}
@@ -620,8 +620,8 @@ jQuery.extend(true, _R, {
 			// CHECK FOR CORRECT CORE AND EXTENSION VERSION
 			if (_R.getversion().core<extension.min_core) {			
 				if (extension.check===undefined) {
-					console.log("%c"+"Slider Revolution Warning (Core:"+_R.getversion().core+")",'color:#c0392b;font-weight:bold;');
-					console.log("%c"+"     Core is older than expected ("+extension.min_core+") from "+extension.alias,'color:#333');
+					console.log("%c"+"Slider Revolution Warning (core:"+_R.getversion().core+")",'color:#c0392b;font-weight:bold;');
+					console.log("%c"+"     core is older than expected ("+extension.min_core+") from "+extension.alias,'color:#333');
 					console.log("%c"+"     Please update Slider Revolution to the latest version.",'color:#333');
 					console.log("%c"+"     It might be required to purge and clear Server/Client side Caches.",'color:#333');
 					
@@ -631,7 +631,7 @@ jQuery.extend(true, _R, {
 
 			if (_R.getversion()[extension.name]!=undefined && extension.version <_R.getversion()[extension.name]) {
 				if (extension.check===undefined) {
-					console.log("%c"+"Slider Revolution Warning (Core:"+_R.getversion().core+")",'color:#c0392b;font-weight:bold;');
+					console.log("%c"+"Slider Revolution Warning (core:"+_R.getversion().core+")",'color:#c0392b;font-weight:bold;');
 					console.log("%c"+"     "+extension.alias+" ("+extension.version+") is older than requiered ("+_R.getversion()[extension.name]+")",'color:#333');
 					console.log("%c"+"     Please update Slider Revolution to the latest version.",'color:#333');
 					console.log("%c"+"     It might be required to purge and clear Server/Client side Caches.",'color:#333');				

@@ -6,7 +6,8 @@ require_once 'vendor/autoload.php';
 error_reporting(E_ALL);
 
 //Getting Page
-return (new \app\Controllers\ViewController([
-    "/" => ["action" => "index"],
-    "/contact" => ["action" => "contact"],
-]))->handleRequest();
+return (new \app\Controllers\ViewController())->handleRequest();
+
+
+
+

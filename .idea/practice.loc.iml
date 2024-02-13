@@ -9,6 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/resources/Porto/php/php-mailer/test" isTestSource="true" packagePrefix="PHPMailer\Test\" />
       <sourceFolder url="file://$MODULE_DIR$/resources/Porto/php/php-mailer/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/resources/Porto/php/tweet-php/lib/tmhOAuth/" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/routes" isTestSource="false" packagePrefix="routes\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
     </content>
     <orderEntry type="inheritedJdk" />

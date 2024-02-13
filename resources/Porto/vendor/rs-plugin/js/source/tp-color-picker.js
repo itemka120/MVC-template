@@ -410,7 +410,7 @@
 		'solid_color': 'Solid Color',
 		'gradient_color': 'Gradient Color',
 		'currently_editing': 'Currently Editing',
-		'core_presets': 'Core Presets',
+		'core_presets': 'core Presets',
 		'custom_presets': 'Custom Presets',
 		'enter_a_name': 'Enter a Name',
 		'save_a_new_preset': 'Save a new Preset',

@@ -15,7 +15,7 @@
  */
 $.extend( $.validator.messages, {
 
-	// Core
+	// core
 	required: "Este campo &eacute; requerido.",
 	remote: "Por favor, corrija este campo.",
 	email: "Por favor, forne&ccedil;a um endere&ccedil;o de email v&aacute;lido.",

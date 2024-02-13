@@ -582,7 +582,7 @@ Vivus.prototype.setCallback = function(callback) {
 };
 
 /**
- * Core
+ * core
  **************************************
  */
 

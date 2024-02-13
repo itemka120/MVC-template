@@ -1,33 +1,34 @@
 <?php
+// Define the namespace for the controller class
 namespace app\Controllers;
 
-use app\Models\Model;
+// Import the Router class from the core\Routing namespace
+use core\Routing\Router;
 
+// Define the ViewController class
 class ViewController {
 
+    // Property to store routes(could be replaced by a simple variable)
     private $routes;
 
-    public function __construct($routes){
-        $this->routes = $routes;
-    }
+    // Method to handle incoming requests
     public function handleRequest() {
-        // Get the current URL
-        $url = $_SERVER['REQUEST_URI'];
 
-        $this->routes = $this->getRoute($url);
+        // Create a new Router instance
+        $router = new Router();
 
-        // If a route is found, call the corresponding action
+        // Dispatch the request to get matched routes
+        $this->routes = $router->dispatch();
+
+        // If a route is found
         if ($this->routes) {
+            // Extract the action name from the matched route
             $actionName = $this->routes['action'];
+            // Call the corresponding action method from the PageController
             return (new PageController())->$actionName();
         } else {
-            // If no route is found, show a 404 error
+            // If no route is found, instantiate the ErrorController and call its show404 method
             return (new ErrorController())->show404();
         }
-    }
-
-    private function getRoute($url) {
-        // Check if a route exists for the given URL, return null if not found
-        return $this->routes[$url] ?? null;
     }
 }

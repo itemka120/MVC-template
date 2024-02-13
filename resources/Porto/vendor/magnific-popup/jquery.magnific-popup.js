@@ -17,7 +17,7 @@ if (typeof define === 'function' && define.amd) {
 /*>>core*/
 /**
  * 
- * Magnific Popup Core JS file
+ * Magnific Popup core JS file
  * 
  */
 
