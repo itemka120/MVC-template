@@ -7,5 +7,5 @@ use core\Routing\Route;
 return [
     // Define a route for each root path
     new Route('/', 'index'),
-    new Route('/contact',  'contact'),
+    new Route('/about',  'about'),
 ];

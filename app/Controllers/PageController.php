@@ -21,13 +21,13 @@ class PageController {
     }
 
     // Method to handle the contact page
-    public function contact()
+    public function about()
     {
-        // Read the content of the 'contact.php' view file
-        $content = file_get_contents('public/views/contact.php');
+        // Read the content of the 'about.php' view file
+        $content = file_get_contents('public/views/about.php');
 
         // Set the title for the page
-        $title = 'Contact me';
+        $title = 'About me';
 
         // Create a new View object with the title and content, then render it
         echo (new View($title, $content))->render();
