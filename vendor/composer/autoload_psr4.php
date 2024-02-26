@@ -7,6 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'core\\' => array($baseDir . '/core'),
-    'app\\Models\\' => array($baseDir . '/app/Models'),
-    'app\\Controllers\\' => array($baseDir . '/app/Controllers'),
+    'app\\' => array($baseDir . '/app'),
+    'Twig\\' => array($vendorDir . '/twig/twig/src'),
+    'Symfony\\Polyfill\\Php80\\' => array($vendorDir . '/symfony/polyfill-php80'),
+    'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
+    'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
 );

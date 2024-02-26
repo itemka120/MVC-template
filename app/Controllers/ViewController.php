@@ -1,18 +1,16 @@
 <?php
-// Define the namespace for the controller class
 namespace app\Controllers;
 
-// Import the Router class from the core\Routing namespace
 use core\Routing\Router;
 
-// Define the ViewController class
 class ViewController {
 
     // Property to store routes(could be replaced by a simple variable)
     private $routes;
 
     // Method to handle incoming requests
-    public function handleRequest() {
+    public function handleRequest()
+    {
 
         // Create a new Router instance
         $router = new Router();

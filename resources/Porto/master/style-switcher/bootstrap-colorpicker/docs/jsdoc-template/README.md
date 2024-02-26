@@ -42,7 +42,7 @@ In your `.jsdoc.json` file, add a template option.
 
 ```json
 "opts": {
-  "template": "node_modules/minami"
+  "layouts": "node_modules/minami"
 }
 ```
 

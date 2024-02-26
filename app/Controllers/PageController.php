@@ -3,33 +3,38 @@
 namespace app\Controllers;
 
 // Import the View class from the core\View namespace
-use core\View\View;
+use core\Twig\Twig,
+    Twig\Error\LoaderError;
 
 // Define the PageController class
-class PageController {
+class PageController
+{
     // Method to handle the index page
-    public function index()
+    /**
+     * @throws LoaderError
+     */
+    public function home()
     {
-        // Read the content of the 'home.php' view file
-        $content = file_get_contents('public/views/home.php');
+        $data = [
+            "title" => 'Welcome!',
 
-        // Set the title for the page
-        $title = 'Welcome!';
-
+        ];
         // Create a new View object with the title and content, then render it
-        echo (new View($title, $content))->render();
+        echo (new Twig())->render('home.twig', $data);
     }
 
     // Method to handle the contact page
+
+    /**
+     * @throws LoaderError
+     */
     public function about()
     {
-        // Read the content of the 'about.php' view file
-        $content = file_get_contents('public/views/about.php');
+        $data = [
+            "title" => 'About me',
 
-        // Set the title for the page
-        $title = 'About me';
-
+        ];
         // Create a new View object with the title and content, then render it
-        echo (new View($title, $content))->render();
+        echo (new Twig())->render('about.twig', $data);
     }
 }

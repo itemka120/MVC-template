@@ -14,7 +14,8 @@ class Model {
     private $db;
 
     // Constructor to initialize the database connection information
-    public function __construct($data) {
+    public function __construct($data)
+    {
         $this->host = $data["host"];
         $this->user = $data["user"];
         $this->password = $data["password"];

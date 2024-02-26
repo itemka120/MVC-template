@@ -1271,10 +1271,10 @@ exports.default = {
    */
   useAlpha: true,
   /**
-   * Colorpicker widget template
+   * Colorpicker widget layouts
    * @type {String}
    * @example
-   * <!-- This is the default template: -->
+   * <!-- This is the default layouts: -->
    * <div class="colorpicker">
    *   <div class="colorpicker-saturation"><i class="colorpicker-guide"></i></div>
    *   <div class="colorpicker-hue"><i class="colorpicker-guide"></i></div>

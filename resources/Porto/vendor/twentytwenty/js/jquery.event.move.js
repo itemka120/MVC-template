@@ -288,7 +288,7 @@
 
 		// iOS live updates the touch objects whereas Android gives us copies.
 		// That means we can't trust the touchstart object to stay the same,
-		// so we must copy the data. This object acts as a template for
+		// so we must copy the data. This object acts as a layouts for
 		// movestart, move and moveend event objects.
 		var data = {
 			target:     touch.target,

@@ -5,6 +5,7 @@
       <list>
         <option value="$PROJECT_DIR$/tests" />
         <option value="$PROJECT_DIR$/resources/Porto/php/php-mailer/tests" />
+        <option value="$PROJECT_DIR$/resources/Porto/php/tweet-php/lib/twitter-text-php/tests/Twitter" />
         <option value="$PROJECT_DIR$/resources/Porto/php/php-mailer/tests" />
       </list>
     </option>

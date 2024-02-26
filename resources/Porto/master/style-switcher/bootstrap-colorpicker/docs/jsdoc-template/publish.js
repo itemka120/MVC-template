@@ -7,7 +7,7 @@ var helper = require("jsdoc/util/templateHelper")
 var logger = require("jsdoc/util/logger")
 var path = require("jsdoc/path")
 var taffy = require("taffydb").taffy
-var template = require("jsdoc/template")
+var template = require("jsdoc/layouts")
 var util = require("util")
 
 var htmlsafe = helper.htmlsafe
@@ -604,7 +604,7 @@ exports.publish = function (taffyData, opts, tutorials) {
   }
   fs.mkPath(outdir)
 
-  // copy the template's static files to outdir
+  // copy the layouts's static files to outdir
   var fromDir = path.join(templatePath, "static")
   var staticFiles = fs.ls(fromDir, 3)
 
@@ -704,7 +704,7 @@ exports.publish = function (taffyData, opts, tutorials) {
     ? true
     : false
 
-  // add template helpers
+  // add layouts helpers
   view.find = find
   view.linkto = linkto
   view.resolveAuthorLinks = resolveAuthorLinks

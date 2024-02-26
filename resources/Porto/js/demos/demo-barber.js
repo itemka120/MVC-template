@@ -67,7 +67,7 @@ Theme Version:	9.7.0
                         feed.run();
                 
                     } else {
-                        console.log('Instagram Feed Error: Token file not found. If you did not setup your access token yet, please check the template documentation at "Instagram" section.');
+                        console.log('Instagram Feed Error: Token file not found. If you did not setup your access token yet, please check the layouts documentation at "Instagram" section.');
                     }
                     
                 })

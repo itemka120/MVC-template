@@ -9,18 +9,21 @@ class Route {
     private $action;
 
     // Constructor to initialize the route path and action
-    public function __construct($path, $action) {
+    public function __construct($path, $action)
+    {
         $this->path = $path;
         $this->action = $action;
     }
 
     // Method to get the route path
-    public function getPath() {
+    public function getPath()
+    {
         return $this->path;
     }
 
     // Method to get the route action
-    public function getAction() {
+    public function getAction()
+    {
         return $this->action;
     }
 }
