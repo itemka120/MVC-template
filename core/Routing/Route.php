@@ -1,9 +1,9 @@
 <?php
-// Define the namespace for the Route class
+
 namespace core\Routing;
 
-// Define the Route class
-class Route {
+class Route
+{
     // Properties to store route path and action
     private $path;
     private $action;

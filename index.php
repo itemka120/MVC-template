@@ -1,12 +1,22 @@
 <?php
-//Loading Classes
-use app\Controllers\ViewController;
+
+/**
+ * Require Composer's autoloader to load dependencies
+ */
 
 require_once 'vendor/autoload.php';
 
-//Debugging
+/**
+ * Debugging: Setting up error reporting to display all errors
+ */
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-//Getting Page
+/**
+ * All the requests are received and processed here
+ */
+
+use app\Controllers\ViewController;
+
 return (new ViewController())->handleRequest();

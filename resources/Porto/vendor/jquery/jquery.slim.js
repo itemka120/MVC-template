@@ -3377,19 +3377,19 @@ jQuery.each( {
 			// Support: IE 11+
 			// <object> elements with no `data` attribute has an object
 			// `contentDocument` with a `null` prototype.
-			getProto( elem.contentDocument ) ) {
+			getProto(elem.contentDocument)) {
 
 			return elem.contentDocument;
 		}
 
 		// Support: IE 9 - 11 only, iOS 7 only, Android Browser <=4.3 only
-		// Treat the layouts element as a regular one in browsers that
+		// Treat the views element as a regular one in browsers that
 		// don't support it.
-		if ( nodeName( elem, "template" ) ) {
+		if (nodeName(elem, "template")) {
 			elem = elem.content || elem;
 		}
 
-		return jQuery.merge( [], elem.childNodes );
+		return jQuery.merge([], elem.childNodes);
 	}
 }, function( name, fn ) {
 	jQuery.fn[ name ] = function( until, selector ) {

@@ -3,30 +3,24 @@ namespace app\Controllers;
 
 use core\Routing\Router;
 
-class ViewController {
-
-    // Property to store routes(could be replaced by a simple variable)
-    private $routes;
-
-    // Method to handle incoming requests
+class ViewController
+{
+    /**
+     * Method to handle incoming requests.
+     *
+     * Returns layout of the corresponding action method or 404 error.
+     */
     public function handleRequest()
     {
+        $router = new Router(); // Instantiate Router outside the loop
 
-        // Create a new Router instance
-        $router = new Router();
+        $routes = $router->dispatch(); // Dispatch the request to get matched routes
 
-        // Dispatch the request to get matched routes
-        $this->routes = $router->dispatch();
-
-        // If a route is found
-        if ($this->routes) {
-            // Extract the action name from the matched route
-            $actionName = $this->routes['action'];
-            // Call the corresponding action method from the PageController
-            return (new PageController())->$actionName();
+        if ($routes) { // If a route is found
+            $actionName = $routes['action']; // Extract the action name from the matched route
+            return (new PageController())->$actionName(); // Call the corresponding action method from the PageController
         } else {
-            // If no route is found, instantiate the ErrorController and call its show404 method
-            return (new ErrorController())->show404();
+            return (new ErrorController())->show404(); // If no route is found, instantiate the ErrorController and call its show404 method
         }
     }
 }

@@ -1,40 +1,49 @@
 <?php
-// Define the namespace for the controller class
+
 namespace app\Controllers;
 
-// Import the View class from the core\View namespace
-use core\Twig\Twig,
+use app\Models\ViewModel,
+    core\Twig\Twig,
     Twig\Error\LoaderError;
 
-// Define the PageController class
 class PageController
 {
-    // Method to handle the index page
     /**
+     * Renders the home page.
+     *
      * @throws LoaderError
      */
     public function home()
     {
-        $data = [
-            "title" => 'Welcome!',
+        // Extract data from ViewModel
+        $titles = (new ViewModel())->extractTitles();
 
+        // Prepare data for rendering
+        $data = [
+            "title" => $titles["home"],
         ];
+
         // Create a new View object with the title and content, then render it
         echo (new Twig())->render('home.twig', $data);
     }
 
-    // Method to handle the contact page
-
     /**
+     * Renders the about page.
+     *
      * @throws LoaderError
      */
     public function about()
     {
-        $data = [
-            "title" => 'About me',
+        // Extract data from ViewModel
+        $titles = (new ViewModel())->extractTitles();
 
+        // Prepare data for rendering
+        $data = [
+            "title" => $titles["about"],
         ];
+
         // Create a new View object with the title and content, then render it
         echo (new Twig())->render('about.twig', $data);
     }
+
 }

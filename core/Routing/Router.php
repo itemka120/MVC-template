@@ -1,8 +1,7 @@
 <?php
-// Define the namespace for the Router class
+
 namespace core\Routing;
 
-// Define the Router class
 class Router
 {
     // Property to store routes
@@ -25,7 +24,8 @@ class Router
     }
 
     // Method to get the matched route for the current request URL
-    public function getRoute($routes) {
+    public function getRoute($routes)
+    {
         // Get the request URI
         $url = $_SERVER['REQUEST_URI'];
 

@@ -282,24 +282,30 @@
 
 	function touchstart(e) {
 		// Don't get in the way of interaction with form elements
-		if (ignoreTags[e.target.tagName.toLowerCase()]) { return; }
+		if (ignoreTags[e.target.tagName.toLowerCase()]) {
+			return;
+		}
 
 		var touch = e.changedTouches[0];
 
 		// iOS live updates the touch objects whereas Android gives us copies.
 		// That means we can't trust the touchstart object to stay the same,
-		// so we must copy the data. This object acts as a layouts for
+		// so we must copy the data. This object acts as a views for
 		// movestart, move and moveend event objects.
 		var data = {
-			target:     touch.target,
-			pageX:      touch.pageX,
-			pageY:      touch.pageY,
+			target: touch.target,
+			pageX: touch.pageX,
+			pageY: touch.pageY,
 			identifier: touch.identifier,
 
 			// The only way to make handlers individually unbindable is by
 			// making them unique.
-			touchmove:  function(e, data) { touchmove(e, data); },
-			touchend:   function(e, data) { touchend(e, data); }
+			touchmove: function (e, data) {
+				touchmove(e, data);
+			},
+			touchend: function (e, data) {
+				touchend(e, data);
+			}
 		};
 
 		on(document, touchevents.move, data.touchmove, data);

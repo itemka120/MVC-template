@@ -20,6 +20,8 @@
 
 namespace PHPMailer\PHPMailer;
 
+use Psr\Log\LoggerInterface;
+
 /**
  * PHPMailer - PHP email creation and transport class.
  *
@@ -422,7 +424,7 @@ class PHPMailer
      *
      * @see SMTP::$Debugoutput
      *
-     * @var string|callable|\Psr\Log\LoggerInterface
+     * @var string|callable|LoggerInterface
      */
     public $Debugoutput = 'echo';
 
@@ -883,7 +885,7 @@ class PHPMailer
             return;
         }
         //Is this a PSR-3 logger?
-        if ($this->Debugoutput instanceof \Psr\Log\LoggerInterface) {
+        if ($this->Debugoutput instanceof LoggerInterface) {
             $this->Debugoutput->debug($str);
 
             return;
@@ -915,7 +917,7 @@ class PHPMailer
                 "\t",
                     //Trim trailing space
                 trim(
-                    //Indent for readability, except for trailing break
+                //Indent for readability, except for trailing break
                     str_replace(
                         "\n",
                         "\n                   \t                  ",
@@ -1183,8 +1185,8 @@ class PHPMailer
             $list = imap_rfc822_parse_adrlist($addrstr, '');
             foreach ($list as $address) {
                 if (('.SYNTAX-ERROR.' !== $address->host) && static::validateAddress(
-                    $address->mailbox . '@' . $address->host
-                )) {
+                        $address->mailbox . '@' . $address->host
+                    )) {
                     $addresses[] = [
                         'name' => (property_exists($address, 'personal') ? $address->personal : ''),
                         'address' => $address->mailbox . '@' . $address->host,
@@ -1240,7 +1242,7 @@ class PHPMailer
         $pos = strrpos($address, '@');
         if ((false === $pos)
             || ((!$this->has8bitChars(substr($address, ++$pos)) || !static::idnSupported())
-            && !static::validateAddress($address))
+                && !static::validateAddress($address))
         ) {
             $error_message = sprintf(
                 '%s (From): %s',
@@ -1837,16 +1839,16 @@ class PHPMailer
      * Send mail via SMTP.
      * Returns false if there is a bad MAIL FROM, RCPT, or DATA input.
      *
-     * @see PHPMailer::setSMTPInstance() to use a different class.
-     *
-     * @uses \PHPMailer\PHPMailer\SMTP
-     *
      * @param string $header The message headers
-     * @param string $body   The message body
-     *
-     * @throws Exception
+     * @param string $body The message body
      *
      * @return bool
+     * @throws Exception
+     *
+     * @see  PHPMailer::setSMTPInstance() to use a different class.
+     *
+     * @uses SMTP
+     *
      */
     protected function smtpSend($header, $body)
     {
@@ -1927,11 +1929,11 @@ class PHPMailer
      *
      * @param array $options An array of options compatible with stream_context_create()
      *
+     * @return bool
      * @throws Exception
      *
-     * @uses \PHPMailer\PHPMailer\SMTP
+     * @uses SMTP
      *
-     * @return bool
      */
     public function smtpConnect($options = null)
     {
@@ -2027,11 +2029,11 @@ class PHPMailer
                         $this->smtp->hello($hello);
                     }
                     if ($this->SMTPAuth && !$this->smtp->authenticate(
-                        $this->Username,
-                        $this->Password,
-                        $this->AuthType,
-                        $this->oauth
-                    )) {
+                            $this->Username,
+                            $this->Password,
+                            $this->AuthType,
+                            $this->oauth
+                        )) {
                         throw new Exception($this->lang('authenticate'));
                     }
 
@@ -4150,13 +4152,13 @@ class PHPMailer
             'doc' => 'application/msword',
             'word' => 'application/msword',
             'xlsx' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-            'xltx' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.layouts',
-            'potx' => 'application/vnd.openxmlformats-officedocument.presentationml.layouts',
+            'xltx' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.views',
+            'potx' => 'application/vnd.openxmlformats-officedocument.presentationml.views',
             'ppsx' => 'application/vnd.openxmlformats-officedocument.presentationml.slideshow',
             'pptx' => 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
             'sldx' => 'application/vnd.openxmlformats-officedocument.presentationml.slide',
             'docx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-            'dotx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.layouts',
+            'dotx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.views',
             'xlam' => 'application/vnd.ms-excel.addin.macroEnabled.12',
             'xlsb' => 'application/vnd.ms-excel.sheet.binary.macroEnabled.12',
             'class' => 'application/octet-stream',

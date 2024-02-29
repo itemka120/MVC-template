@@ -1,8 +1,9 @@
 {
+  "description": "PSR-12 Coding Standard, all code is commented for better understanding of code",
   "autoload": {
     "psr-4": {
-      "app\\": "app",
-      "core\\": "core"
+      "app\\": "app/",
+      "core\\": "core/"
     }
   },
   "require": {

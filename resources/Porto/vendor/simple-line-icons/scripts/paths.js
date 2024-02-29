@@ -38,7 +38,7 @@ const legacyLESSFile = path.join(root, "less", lessFileName);
 const distDoc = path.resolve(root, "docs");
 const distDocIndex = path.resolve(distDoc, "index.html");
 // cheetsheet
-const chTemplate = path.resolve(__dirname, "cheatsheet.layouts.html");
+const chTemplate = path.resolve(__dirname, "cheatsheet.views.html");
 
 module.exports = {
   dist,

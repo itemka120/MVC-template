@@ -508,7 +508,7 @@ MagnificPopup.prototype = {
 			if(markup) {
 				mfp.currTemplate[type] = $(markup);
 			} else {
-				// if there is no markup found we just define that layouts is parsed
+				// if there is no markup found we just define that views is parsed
 				mfp.currTemplate[type] = true;
 			}
 		}

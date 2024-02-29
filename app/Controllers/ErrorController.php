@@ -1,14 +1,26 @@
 <?php
-// Define the namespace for the controller class
+
 namespace app\Controllers;
 
-// Define the ErrorController class
+use app\Models\ViewModel;
+use core\Twig\Twig;
+
 class ErrorController
 {
-    // Method to handle 404 errors
-    public function show404(): bool
+    /**
+     * Method to return 404 errors.
+     */
+    public function show404()
     {
-        // Set the HTTP response code to 404 (Not Found)
-        return http_response_code(404);
+        // Extract data from ViewModel
+        $titles = (new ViewModel())->extractTitles();
+
+        // Prepare data for rendering
+        $data = [
+            "title" => $titles["404"],
+        ];
+
+        // Create a new View object with the title and content, then render it
+        return (new Twig())->render('404.twig', $data);
     }
 }
