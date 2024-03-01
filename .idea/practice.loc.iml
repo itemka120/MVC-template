@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/resources/Porto/php/php-mailer/test" isTestSource="true" packagePrefix="PHPMailer\Test\" />
       <sourceFolder url="file://$MODULE_DIR$/resources/Porto/php/php-mailer/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/resources/Porto/php/tweet-php/lib/tmhOAuth/" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/resources/Porto/vendor" isTestSource="false" packagePrefix="resources\Porto\vendor\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-ctype" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php80" />

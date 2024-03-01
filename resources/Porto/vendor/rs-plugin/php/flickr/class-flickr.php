@@ -116,11 +116,11 @@ class TP_flickr {
 	}
 
 	/**
-	 * Get Public Photos
+	 * Get public Photos
 	 *
+	 * @param string $user_id flicker User id (not name)
+	 * @param int $item_count number of photos to pull
 	 * @since    1.0.0
-	 * @param    string    $user_id 	flicker User id (not name)
-	 * @param    int       $item_count 	number of photos to pull
 	 */
 	public function get_public_photos($user_id,$item_count=10){
 		//public photos params

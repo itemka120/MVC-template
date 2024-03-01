@@ -1,5 +1,5 @@
 /*
-Name:           App Landing
+Name:           app Landing
 Written by:     Okler Themes - (http://www.okler.net)
 Theme Version:  9.7.0
 */

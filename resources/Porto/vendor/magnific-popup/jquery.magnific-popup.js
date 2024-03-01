@@ -124,7 +124,7 @@ var _mfpOn = function(name, f) {
 
 
 /**
- * Public functions
+ * public functions
  */
 MagnificPopup.prototype = {
 
@@ -816,21 +816,19 @@ MagnificPopup.prototype = {
 }; /* MagnificPopup core prototype end */
 
 
+	/**
+	 * public static functions
+	 */
+	$.magnificPopup = {
+		instance: null,
+		proto: MagnificPopup.prototype,
+		modules: [],
 
+		open: function (options, index) {
+			_checkInstance();
 
-/**
- * Public static functions
- */
-$.magnificPopup = {
-	instance: null,
-	proto: MagnificPopup.prototype,
-	modules: [],
-
-	open: function(options, index) {
-		_checkInstance();
-
-		if(!options) {
-			options = {};
+			if (!options) {
+				options = {};
 		} else {
 			options = $.extend(true, {}, options);
 		}

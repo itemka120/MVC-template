@@ -2,9 +2,9 @@
 
 namespace core\Twig;
 
-use Twig\Environment;
-use Twig\Error\Error;
-use Twig\Loader\FilesystemLoader;
+use Twig\Environment,
+	Twig\Error\Error,
+	Twig\Loader\FilesystemLoader;
 
 class Twig
 {

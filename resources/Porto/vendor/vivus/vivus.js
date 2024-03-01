@@ -735,7 +735,7 @@ Vivus.prototype.mapping = function() {
 };
 
 /**
- * Public method to re-evaluate line length for non-scaling lines
+ * public method to re-evaluate line length for non-scaling lines
  * path elements.
  */
 Vivus.prototype.recalc = function () {

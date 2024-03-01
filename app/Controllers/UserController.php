@@ -6,39 +6,39 @@ use core\Twig\Twig,
 	Twig\Error\LoaderError;
 use Exception;
 
-class PageController extends UserController
+class UserController
 {
 	/**
-	 * Renders the home page.
+	 * Renders the register page.
 	 *
 	 * @throws LoaderError
 	 * @throws Exception
 	 */
-	public function home()
+	public function register()
 	{
 		// Prepare data for rendering
 		$data = [
-			'title' => 'Welcome!',
+			'title' => "Register",
 		];
 
 		// Create a new View object with the title and content, then render it
-		echo (new Twig())->render('home.twig', $data);
+		echo (new Twig())->render('register.twig', $data);
 	}
 
 	/**
-	 * Renders the about page.
+	 * Renders the register page.
 	 *
 	 * @throws LoaderError
 	 * @throws Exception
 	 */
-	public function about()
+	public function login()
 	{
 		// Prepare data for rendering
 		$data = [
-			'title' => 'About me',
+			'title' => "Login",
 		];
 
 		// Create a new View object with the title and content, then render it
-		echo (new Twig())->render('about.twig', $data);
+		echo (new Twig())->render('login.twig', $data);
 	}
 }

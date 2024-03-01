@@ -24,7 +24,7 @@ const toType = obj => {
 };
 /**
  * --------------------------------------------------------------------------
- * Public Util Api
+ * public Util Api
  * --------------------------------------------------------------------------
  */
 
@@ -769,6 +769,7 @@ const EVENT_CLOSE = `close${EVENT_KEY$c}`;
 const EVENT_CLOSED = `closed${EVENT_KEY$c}`;
 const CLASS_NAME_FADE$5 = 'fade';
 const CLASS_NAME_SHOW$8 = 'show';
+
 /**
  * ------------------------------------------------------------------------
  * Class Definition
@@ -779,7 +780,7 @@ class Alert extends BaseComponent {
   // Getters
   static get NAME() {
     return NAME$d;
-  } // Public
+  } // public
 
 
   close() {
@@ -858,6 +859,7 @@ const DATA_API_KEY$7 = '.data-api';
 const CLASS_NAME_ACTIVE$3 = 'active';
 const SELECTOR_DATA_TOGGLE$5 = '[data-bs-toggle="button"]';
 const EVENT_CLICK_DATA_API$6 = `click${EVENT_KEY$b}${DATA_API_KEY$7}`;
+
 /**
  * ------------------------------------------------------------------------
  * Class Definition
@@ -868,7 +870,7 @@ class Button extends BaseComponent {
   // Getters
   static get NAME() {
     return NAME$c;
-  } // Public
+  } // public
 
 
   toggle() {
@@ -1163,7 +1165,7 @@ class Carousel extends BaseComponent {
 
   static get NAME() {
     return NAME$b;
-  } // Public
+  } // public
 
 
   next() {
@@ -1686,7 +1688,7 @@ class Collapse extends BaseComponent {
 
   static get NAME() {
     return NAME$a;
-  } // Public
+  } // public
 
 
   toggle() {
@@ -2010,7 +2012,7 @@ class Dropdown extends BaseComponent {
 
   static get NAME() {
     return NAME$9;
-  } // Public
+  } // public
 
 
   toggle() {
@@ -2787,7 +2789,7 @@ class Modal extends BaseComponent {
 
   static get NAME() {
     return NAME$6;
-  } // Public
+  } // public
 
 
   toggle(relatedTarget) {
@@ -3206,7 +3208,7 @@ class Offcanvas extends BaseComponent {
 
   static get Default() {
     return Default$4;
-  } // Public
+  } // public
 
 
   toggle(relatedTarget) {
@@ -3639,7 +3641,7 @@ class Tooltip extends BaseComponent {
 
   static get DefaultType() {
     return DefaultType$3;
-  } // Public
+  } // public
 
 
   enable() {
@@ -4401,7 +4403,7 @@ class ScrollSpy extends BaseComponent {
 
   static get NAME() {
     return NAME$2;
-  } // Public
+  } // public
 
 
   refresh() {
@@ -4599,6 +4601,7 @@ const SELECTOR_ACTIVE_UL = ':scope > li > .active';
 const SELECTOR_DATA_TOGGLE = '[data-bs-toggle="tab"], [data-bs-toggle="pill"], [data-bs-toggle="list"]';
 const SELECTOR_DROPDOWN_TOGGLE = '.dropdown-toggle';
 const SELECTOR_DROPDOWN_ACTIVE_CHILD = ':scope > .dropdown-menu .active';
+
 /**
  * ------------------------------------------------------------------------
  * Class Definition
@@ -4609,7 +4612,7 @@ class Tab extends BaseComponent {
   // Getters
   static get NAME() {
     return NAME$1;
-  } // Public
+  } // public
 
 
   show() {
@@ -4831,7 +4834,7 @@ class Toast extends BaseComponent {
 
   static get NAME() {
     return NAME;
-  } // Public
+  } // public
 
 
   show() {

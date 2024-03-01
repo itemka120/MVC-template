@@ -3,7 +3,8 @@
   "autoload": {
     "psr-4": {
       "app\\": "app/",
-      "core\\": "core/"
+      "core\\": "core/",
+      "resources\\Porto\\vendor\\": "resources/Porto/vendor"
     }
   },
   "require": {

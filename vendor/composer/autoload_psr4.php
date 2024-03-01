@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'resources\\Porto\\vendor\\' => array($baseDir . '/resources/Porto/vendor'),
     'core\\' => array($baseDir . '/core'),
     'app\\' => array($baseDir . '/app'),
     'Twig\\' => array($vendorDir . '/twig/twig/src'),
