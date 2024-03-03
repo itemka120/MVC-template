@@ -3,10 +3,10 @@
 namespace app\Controllers;
 
 use core\Twig\Twig,
-	Twig\Error\LoaderError;
-use Exception;
+	Twig\Error\LoaderError,
+	Exception;
 
-class PageController extends UserController
+class PageController extends Controller
 {
 	/**
 	 * Renders the home page.

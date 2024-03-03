@@ -5,7 +5,7 @@ namespace app\Controllers;
 use core\Twig\Twig,
 	Twig\Error\Error;
 
-class ErrorController
+class ErrorController extends Controller
 {
 	/**
 	 * Method to return 404 errors.

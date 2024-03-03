@@ -2,11 +2,12 @@
 
 namespace app\Controllers;
 
-use core\Twig\Twig,
-	Twig\Error\LoaderError;
-use Exception;
+use app\Models\UserModel,
+	core\Twig\Twig,
+	Twig\Error\LoaderError,
+	Exception;
 
-class UserController
+class UserController extends Controller
 {
 	/**
 	 * Renders the register page.
@@ -16,6 +17,7 @@ class UserController
 	 */
 	public function register()
 	{
+
 		// Prepare data for rendering
 		$data = [
 			'title' => "Register",
@@ -23,6 +25,10 @@ class UserController
 
 		// Create a new View object with the title and content, then render it
 		echo (new Twig())->render('register.twig', $data);
+
+		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			return (new UserModel())->UserRegister($_POST['username'], $_POST['email'], password_hash($_POST['password'], PASSWORD_DEFAULT));
+		}
 	}
 
 	/**
@@ -40,5 +46,8 @@ class UserController
 
 		// Create a new View object with the title and content, then render it
 		echo (new Twig())->render('login.twig', $data);
+		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			return (new UserModel())->UserLogin($_POST['email'], password_hash($_POST['password'], PASSWORD_DEFAULT));
+		}
 	}
 }

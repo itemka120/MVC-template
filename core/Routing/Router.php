@@ -16,7 +16,10 @@ class Router
 		// Iterate through each route and add it to the routes array
 		foreach ($routes as $route) {
 			// Access route properties and store them in the routes array
-			$this->routes[$route->getPath()] = ["action" => $route->getAction()];
+			$this->routes[$route->getPath()] = [
+				"controller" => $route->getController(),
+				"action" => $route->getAction()
+			];
 		}
 
 		// Call the getRoute method to find a matching route for the current request URL

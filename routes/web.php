@@ -4,8 +4,8 @@
 
 return [
 	// Define a route for each root path
-	new core\Routing\Route('/', 'home'),
-	new core\Routing\Route('/about', 'about'),
-	new core\Routing\Route('/login', 'login'),
-	new core\Routing\Route('/register', 'register'),
+	new core\Routing\Route('/', 'Page', 'home'),
+	new core\Routing\Route('/about', 'Page', 'about'),
+	new core\Routing\Route('/login', 'User', 'login'),
+	new core\Routing\Route('/register', 'User', 'register'),
 ];
