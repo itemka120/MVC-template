@@ -11,6 +11,9 @@ class UserModel extends Model
 			return false;
 		}
 
+		// Hash the password
+		$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
 		// Establish database connection
 		$conn = $this->dbConnect();
 
@@ -27,13 +30,12 @@ class UserModel extends Model
 		}
 
 		// Register new user
-		$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 		$stmt = $conn->prepare("INSERT INTO user_form (`name`, `email`, `password`) VALUES (?, ?, ?)");
 		$stmt->bind_param("sss", $name, $email, $hashedPassword);
-		$result = $stmt->execute();
+		$stmt->execute();
 		$stmt->close();
 
-		return $result;
+		return true;
 	}
 
 	public function UserLogin($email, $password): bool
@@ -47,20 +49,27 @@ class UserModel extends Model
 		$conn = $this->dbConnect();
 
 		// Retrieve hashed password for the given email
-		$stmt = $conn->prepare("SELECT password FROM user_form WHERE email = ?");
+		$stmt = $conn->prepare("SELECT name, password FROM user_form WHERE email = ?");
 		$stmt->bind_param("s", $email);
 		$stmt->execute();
-		$stmt->bind_result($hashedPassword);
-		$stmt->fetch();
+		$result = $stmt->get_result();
 		$stmt->close();
 
-		// Verify password
-		if (!$hashedPassword) {
-			echo 'User not found';
-			return false; // User not found
+		if ($result !== null) {
+			// Fetch the hashed password from the database
+			$row = $result->fetch_assoc();
+			$hashedPassword = $row['password'];
+			// Verify the provided password against the hashed password
+			if (password_verify($password, $hashedPassword)) {
+				// Password is correct
+				return true;
+			} else {
+				// Incorrect password
+				return false;
+			}
+		} else {
+			// User not found
+			return false;
 		}
-
-		echo 'User is found';
-		return password_verify($password, $hashedPassword);
 	}
 }

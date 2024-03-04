@@ -1,20 +1,46 @@
 {% extends "template.twig" %}
 
 {% block content %}
-    <div class="container mt-5">
-        <h2>Register</h2>
-        <form method="post"> <!-- Replace register.php with your actual PHP file name -->
-            <label>
-                <input type="text" name="username" placeholder="Username" required>
-            </label><br>
-            <label>
-                <input type="text" name="email" placeholder="email" required>
-            </label><br>
-            <label>
-                <input type="password" name="password" placeholder="Password" required>
-            </label><br>
-            <button type="submit" name="register">Register</button>
-        </form>
-        <a href="/">Back to Main Page</a>
+    <div class="row justify-content-center mt-3 p-3">
+        <div class="col-md-6 col-lg-5">
+            <h2 class="font-weight-bold text-5 mb-0">Register</h2>
+            <form id="frmSignUp" method="post">
+                <div class="row">
+                    <div class="form-group col">
+                        <label class="form-label text-color-dark text-3">
+                            Your Name <span class="text-color-danger">*</span>
+                            <input name="username" value="" class="form-control form-control-lg text-4" required="">
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label class="form-label text-color-dark text-3">
+                            Email <span class="text-color-danger">*</span>
+                            <input type="email" name="email" value="" class="form-control form-control-lg text-4"
+                                   required="">
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label></label>
+                        <label class="form-label text-color-dark text-3">
+                            Password <span class="text-color-danger">*</span>
+                            <input type="password" name="password" value="" class="form-control form-control-lg text-4"
+                                   required="">
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <button type="submit"
+                                class="btn btn-dark btn-modern w-100 text-uppercase rounded-0 font-weight-bold text-3 py-3"
+                                data-loading-text="Loading...">Register
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 {% endblock %}

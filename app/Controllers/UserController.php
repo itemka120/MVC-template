@@ -25,9 +25,8 @@ class UserController extends Controller
 
 		// Create a new View object with the title and content, then render it
 		echo (new Twig())->render('register.twig', $data);
-
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			return (new UserModel())->UserRegister($_POST['username'], $_POST['email'], password_hash($_POST['password'], PASSWORD_DEFAULT));
+			return (new UserModel())->UserRegister($_POST['username'], $_POST['email'], $_POST['password']);
 		}
 	}
 
@@ -47,7 +46,7 @@ class UserController extends Controller
 		// Create a new View object with the title and content, then render it
 		echo (new Twig())->render('login.twig', $data);
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			return (new UserModel())->UserLogin($_POST['email'], password_hash($_POST['password'], PASSWORD_DEFAULT));
+			return (new UserModel())->UserLogin($_POST['email'], $_POST['password']);
 		}
 	}
 }
